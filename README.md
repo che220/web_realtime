@@ -3,6 +3,11 @@
 1. Websocket
 2. Plotly
 
+### Pseudo-Threading
+
+1. Function that runs the receive and send is on the main thread
+2. All clients are handled by this single thread!
+
 ### Generate .pem file for SSL
 
 But the following one cannot be used on localhost:
