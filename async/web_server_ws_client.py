@@ -11,7 +11,7 @@ logger = logging.getLogger(os.path.basename(__file__))
 async def hello():
     uri = "ws://localhost:9001/echo"
     async with websockets.connect(uri) as websocket:
-        await websocket.send("this is a ws message")
+        await websocket.send("this is a ws messa234ge")
         greeting = await websocket.recv()
         logger.info(f"< {greeting}")
 
