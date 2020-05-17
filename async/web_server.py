@@ -1,13 +1,16 @@
 from aiohttp import web
-import asyncio
+import threading
+
 
 async def handle(request):
+    print('handle:', threading.current_thread().ident)  # same thread as below
     name = request.match_info.get('name', "Anonymous")
     text = "Hello, " + name
     return web.Response(text=text)
 
 
 async def wshandler(request):
+    print('ws:', threading.current_thread().ident)  # same thread as above
     ws = web.WebSocketResponse()
     await ws.prepare(request)
 
